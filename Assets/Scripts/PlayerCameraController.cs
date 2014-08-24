@@ -11,7 +11,7 @@ public class PlayerCameraController : MonoBehaviour {
 	public GameObject RotX;			// 関節の読み込み
 	public GameObject RotY;
 	public GameObject RotZ;
-	public GameObject Camera;		// 子カメラ
+	public GameObject MyCamera;		// 子カメラ
 
 
 	// Use this for initialization

@@ -106,9 +106,20 @@ public class InputManager : SingletonMonoBehaviour<InputManager> {
 	}
 
 	/// <summary>
+	/// マウスの位置(最後にクリックした場所)を取得 ピクセル
+	/// </summary>
+	public Vector2 getMousePixel(){
+		Vector2 pos = LastClickPos;
+		pos.x = pos.x * Screen.width;
+		pos.y = pos.y * Screen.height;
+		return pos;
+	}
+
+	/// <summary>
 	/// マウスの移動ベクトルを取得
 	/// </summary>
 	public Vector2 getMouseMove(){
 		return MouseMoveVec;
 	}
+
 }
