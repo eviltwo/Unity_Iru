@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
      <Compile Include="Assets\Scripts\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\SmallPowerLight.cs" />
+     <Compile Include="Assets\Scripts\TextManager.cs" />
+     <Compile Include="Assets\Scripts\ViewFPS.cs" />
      <None Include="Assets\Resources\Model\RedDoor\license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

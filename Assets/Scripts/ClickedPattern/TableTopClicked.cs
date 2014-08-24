@@ -14,6 +14,6 @@ public class TableTopClicked : MonoBehaviour {
 	}
 
 	void Clicked(){
-		Debug.Log ("table!");
+		TextManager.Instance.setText ("テーブルがある。");
 	}
 }
