@@ -1,10 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InputManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SmallPowerLight.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerCameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/InputManager.cs" Line="2" Column="2" />
-      <File FileName="Assets/Scripts/GlobalObject.cs" Line="26" Column="26" />
+      <File FileName="Assets/Scripts/PlayerCameraController.cs" Line="40" Column="40" />
+      <File FileName="Assets/Scripts/InputManager.cs" Line="38" Column="38" />
+      <File FileName="Assets/Scripts/GlobalObject.cs" Line="1" Column="1" />
+      <File FileName="../../../Desktop/new6/Assets/01.kanai/SceneManager.cs" Line="19" Column="19" />
+      <File FileName="Assets/Scripts/SmallPowerLight.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
