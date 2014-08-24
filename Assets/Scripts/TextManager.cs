@@ -56,7 +56,9 @@ public class TextManager : SingletonMonoBehaviour<TextManager> {
 		TextObject.guiText.enabled = true;
 	}
 
-
+	/// <summary>
+	/// テキストを削除する。
+	/// </summary>
 	public void deleteText(){
 		if (IsView) {
 			if (ViewTime < ViewTimeMax) {
