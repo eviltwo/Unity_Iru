@@ -7,77 +7,53 @@ using System.Collections;
 public class InputManager : SingletonMonoBehaviour<InputManager> {
 
 	public float ShortClickTimeMax = 0.3f;	// 一瞬クリックになる判定時間
+	public float ShortClickDistMax = 0.1f;	// 一瞬クリックになるマウス移動距離
 
 	int ClickLevel = 0;						// クリック状態 0:無し 1:初クリック 2:継続(ドラッグの可能性あり)
 	bool IsShortClick = false;				// 一瞬クリックをしたかどうか
 	float ShortClickTime = 0;
+	Vector2 FirstClickPos = Vector2.zero;	// 最初にクリックした位置
 	Vector2 LastClickPos = Vector2.zero;	// 最後にクリックした位置
 	Vector2 MouseMoveVec = Vector2.zero;	// マウスが移動した距離
 
 
 	// Update is called once per frame
 	void Update (){
+		IsShortClick = false;	// 瞬発クリックを初期化
+
+		// クリック判定
 		if (Application.platform == RuntimePlatform.Android) {
-			checkTouch ();		// スマホクリック判定
+			bool click = Input.touchCount > 0;
+			Vector2 mousepos = Vector2.zero;
+			if (click) {
+				mousepos = getScreenPixelToMultiple (Input.GetTouch (0).position);
+			}
+			checkClick (click, mousepos);		// スマホクリック判定
 		} else {
-			checkClick ();		// PCクリック判定
+			bool click = Input.GetKey(KeyCode.Mouse0);
+			Vector2 mousepos = getScreenPixelToMultiple (Input.mousePosition);
+			checkClick (click, mousepos);		// PCクリック判定
 		}
 	}
 
-	/// <summary>
-	/// スマホ用　クリック判定
-	/// </summary>
-	void checkTouch(){
-		IsShortClick = false;
-		if (Input.touchCount > 0) {	// タッチしている
-			Vector2 mousepos = getScreenPixelToMultiple (Input.GetTouch (0).position);	// 新しいマウス位置
-			// タッチの状態
-			switch (ClickLevel) {
-			case 0:
-				ClickLevel = 1;
-				LastClickPos = mousepos;	// マウス移動量を0にしたいので過去位置＝新位置にしておく
-				break;
-			case 1:
-				ClickLevel = 2;
-				break;
-			default:
-				ClickLevel = 1;
-				break;
-			}
-			// 過去のマウス位置からマウス移動量を計算
-			MouseMoveVec = mousepos - LastClickPos;
-			// 過去位置として登録
-			LastClickPos = mousepos;
-			// タッチ時間増加
-			ShortClickTime += Time.deltaTime;
-		} else {					// タッチしていない
-			if (ClickLevel > 0) {
-				if (ShortClickTime <= ShortClickTimeMax) {
-					IsShortClick = true;
-				}
-			}
-			ShortClickTime = 0;
-			ClickLevel = 0;
-		}
-	}
 
 	/// <summary>
-	/// PC用　クリック判定
+	/// クリック判定
 	/// </summary>
-	void checkClick(){
-		if (Input.GetKey(KeyCode.Mouse0)) {	// クリックしている
-			Vector2 mousepos = getScreenPixelToMultiple (Input.mousePosition);	// 新しいマウス位置
+	void checkClick(bool click, Vector2 mousepos){
+		if (click) {					// クリックしている
 			// クリックの状態
 			switch (ClickLevel) {
 			case 0:
 				ClickLevel = 1;
+				FirstClickPos = mousepos;	// 最初のクリック位置
 				LastClickPos = mousepos;	// マウス移動量を0にしたいので過去位置＝新位置にしておく
 				break;
 			case 1:
 				ClickLevel = 2;
 				break;
 			default:
-				ClickLevel = 1;
+				ClickLevel = 2;
 				break;
 			}
 			// 過去のマウス位置からマウス移動量を計算
@@ -86,9 +62,10 @@ public class InputManager : SingletonMonoBehaviour<InputManager> {
 			LastClickPos = mousepos;
 			// タッチ時間増加
 			ShortClickTime += Time.deltaTime;
-		} else {					// クリックしていない
+		} else {						// クリックしていない
 			if (ClickLevel > 0) {
-				if (ShortClickTime <= ShortClickTimeMax) {
+				// クリックが短い・マウス移動距離が短いとき
+				if (ShortClickTime <= ShortClickTimeMax && Vector2.Distance(FirstClickPos,LastClickPos) <= ShortClickDistMax) {
 					IsShortClick = true;
 				}
 			}
@@ -111,7 +88,7 @@ public class InputManager : SingletonMonoBehaviour<InputManager> {
 	/// 一瞬のクリックかどうか
 	/// </summary>
 	public bool isShortClick(){
-		return ClickLevel == 1;
+		return IsShortClick;
 	}
 
 	/// <summary>
