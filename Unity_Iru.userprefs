@@ -1,12 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SmallPowerLight.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/license.txt">
     <Files>
       <File FileName="Assets/Scripts/PlayerCameraController.cs" Line="40" Column="40" />
       <File FileName="Assets/Scripts/InputManager.cs" Line="38" Column="38" />
       <File FileName="Assets/Scripts/GlobalObject.cs" Line="1" Column="1" />
       <File FileName="../../../Desktop/new6/Assets/01.kanai/SceneManager.cs" Line="19" Column="19" />
-      <File FileName="Assets/Scripts/SmallPowerLight.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SmallPowerLight.cs" Line="31" Column="31" />
+      <File FileName="Assets/Scripts/KillAutoLightSetting.cs" Line="26" Column="26" />
+      <File FileName="Assets/license.txt" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

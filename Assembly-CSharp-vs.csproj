@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
      <Compile Include="Assets\Scripts\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\SmallPowerLight.cs" />
+     <None Include="Assets\Resources\Model\RedDoor\license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
