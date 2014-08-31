@@ -1,12 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ActionPattern/Act_PlayerRoot.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Editor/FlagManagerEditor.cs">
     <Files>
       <File FileName="Assets/Scripts/InputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CameraMoveManager.cs" Line="17" Column="17" />
-      <File FileName="Assets/Scripts/ActionPattern/Act_ColliderSwitch.cs" Line="25" Column="25" />
-      <File FileName="Assets/Scripts/MoveManager.cs" Line="87" Column="87" />
-      <File FileName="Assets/Scripts/ActionPattern/Act_PlayerRoot.cs" Line="67" Column="67" />
+      <File FileName="Assets/Scripts/CameraMoveManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ActionPattern/Act_ColliderSwitch.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MoveManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ActionPattern/Act_PlayerRoot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FlagManager.cs" Line="40" Column="40" />
+      <File FileName="Assets/Scripts/ActionPattern/Act_SetFlag.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/SetFlagEditor.cs" Line="3" Column="3" />
+      <File FileName="Assets/Scripts/Struct/PosRot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Struct/Flag.cs" Line="19" Column="19" />
+      <File FileName="Assets/Editor/FlagManagerEditor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

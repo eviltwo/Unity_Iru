@@ -56,8 +56,10 @@
      <Compile Include="Assets\Scripts\ActionPattern\Act_ColliderSwitch.cs" />
      <Compile Include="Assets\Scripts\ActionPattern\Act_MoveObj.cs" />
      <Compile Include="Assets\Scripts\ActionPattern\Act_PlayerRoot.cs" />
+     <Compile Include="Assets\Scripts\ActionPattern\Act_SetFlag.cs" />
      <Compile Include="Assets\Scripts\ActionPattern\Act_ViewText.cs" />
      <Compile Include="Assets\Scripts\CameraMoveManager.cs" />
+     <Compile Include="Assets\Scripts\FlagManager.cs" />
      <Compile Include="Assets\Scripts\GlobalObject.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\MoveManager.cs" />
@@ -66,6 +68,7 @@
      <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
      <Compile Include="Assets\Scripts\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\SmallPowerLight.cs" />
+     <Compile Include="Assets\Scripts\Struct\Flag.cs" />
      <Compile Include="Assets\Scripts\Struct\PosRot.cs" />
      <Compile Include="Assets\Scripts\TextManager.cs" />
      <Compile Include="Assets\Scripts\ViewFPS.cs" />
