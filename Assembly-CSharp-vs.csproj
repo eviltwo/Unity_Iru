@@ -46,13 +46,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\Model\Party Pack\Scripts\CandleLight.cs" />
+     <Compile Include="Assets\Resources\Model\Party Pack\Scripts\CycleCookiesTimer.cs" />
+     <Compile Include="Assets\Resources\Model\Party Pack\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Resources\Model\Party Pack\Scripts\TriggerParticlesTimer.cs" />
+     <Compile Include="Assets\Resources\Model\Party Pack\Scripts\TriggerParticlesTouch.cs" />
+     <Compile Include="Assets\Resources\Model\Party Pack\Scripts\TriggerSoundTouch.cs" />
      <Compile Include="Assets\Scripts\ActionPattern\Act_CameraMove.cs" />
+     <Compile Include="Assets\Scripts\ActionPattern\Act_ColliderSwitch.cs" />
      <Compile Include="Assets\Scripts\ActionPattern\Act_MoveObj.cs" />
+     <Compile Include="Assets\Scripts\ActionPattern\Act_PlayerRoot.cs" />
      <Compile Include="Assets\Scripts\ActionPattern\Act_ViewText.cs" />
      <Compile Include="Assets\Scripts\CameraMoveManager.cs" />
      <Compile Include="Assets\Scripts\GlobalObject.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\MoveManager.cs" />
+     <Compile Include="Assets\Scripts\MoveReturnButton.cs" />
      <Compile Include="Assets\Scripts\PlayerActionController.cs" />
      <Compile Include="Assets\Scripts\PlayerCameraController.cs" />
      <Compile Include="Assets\Scripts\SingletonMonoBehaviour.cs" />
@@ -60,6 +69,7 @@
      <Compile Include="Assets\Scripts\Struct\PosRot.cs" />
      <Compile Include="Assets\Scripts\TextManager.cs" />
      <Compile Include="Assets\Scripts\ViewFPS.cs" />
+     <None Include="Assets\Resources\Model\Party Pack\Sounds\Sounds License.txt" />
      <None Include="Assets\Resources\Model\RedDoor\license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

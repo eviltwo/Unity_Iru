@@ -8,6 +8,7 @@ public class InputManager : SingletonMonoBehaviour<InputManager> {
 
 	public float ShortClickTimeMax = 0.3f;	// 一瞬クリックになる判定時間
 	public float ShortClickDistMax = 0.1f;	// 一瞬クリックになるマウス移動距離
+	public bool EnableControll = true;		// 操作の可・不可
 
 	int ClickLevel = 0;						// クリック状態 0:無し 1:初クリック 2:継続(ドラッグの可能性あり)
 	bool IsShortClick = false;				// 一瞬クリックをしたかどうか
@@ -41,7 +42,7 @@ public class InputManager : SingletonMonoBehaviour<InputManager> {
 	/// クリック判定
 	/// </summary>
 	void checkClick(bool click, Vector2 mousepos){
-		if (click) {					// クリックしている
+		if (click && EnableControll) {					// クリックしている
 			// クリックの状態
 			switch (ClickLevel) {
 			case 0:

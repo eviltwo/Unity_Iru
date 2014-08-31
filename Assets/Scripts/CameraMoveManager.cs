@@ -25,6 +25,7 @@ public class CameraMoveManager : SingletonMonoBehaviour<CameraMoveManager> {
 			if (MoveTime >= MoveTimeMax) {
 				MoveTime = MoveTimeMax;
 				IsMove = false;
+				InputManager.Instance.EnableControll = true;
 			}
 			PosRot pr = getStatus ();
 			Player.transform.position = pr.position;
@@ -45,6 +46,7 @@ public class CameraMoveManager : SingletonMonoBehaviour<CameraMoveManager> {
 		// 初期化
 		MoveTime = 0;
 		IsMove = true;
+		InputManager.Instance.EnableControll = false;
 	}
 
 	/// <summary>

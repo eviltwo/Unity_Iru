@@ -21,9 +21,11 @@ public class MoveManager : SingletonMonoBehaviour<MoveManager> {
 	/// </summary>
 	public void prevObj(){
 		int last = Moves.Count - 1;
+		GameObject obj = (GameObject)Moves [last];
+		obj.SendMessage ("Leave",SendMessageOptions.DontRequireReceiver);	// 離れることを知らせる
 		Moves.RemoveAt (last);
 		last -= 1;
-		GameObject obj = (GameObject)Moves [last];
+		obj = (GameObject)Moves [last];
 		obj.SendMessage ("Returned",SendMessageOptions.DontRequireReceiver);	// 戻ってきたことを知らせる
 	}
 
@@ -31,7 +33,7 @@ public class MoveManager : SingletonMonoBehaviour<MoveManager> {
 	/// 戻れる数を取得
 	/// </summary>
 	public int getMoveValue(){
-		return Moves.Count;
+		return Moves.Count-1;
 	}
 
 

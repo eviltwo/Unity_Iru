@@ -73,4 +73,19 @@ public class PlayerCameraController : MonoBehaviour {
 		}
 		RotX.transform.localEulerAngles = rot;
 	}
+
+	/// <summary>
+	/// カメラの位置と回転を取得
+	/// </summary>
+	public PosRot getPosRot(){
+		Vector3 pos = transform.localPosition;
+		Vector3 angle = new Vector3 ();
+		angle.x = RotX.transform.localEulerAngles.x;
+		angle.y = RotY.transform.localEulerAngles.y;
+		angle.z = RotZ.transform.localEulerAngles.z;
+		PosRot pr = new PosRot ();
+		pr.position = pos;
+		pr.eulerAngles = angle;
+		return pr;
+	}
 }
